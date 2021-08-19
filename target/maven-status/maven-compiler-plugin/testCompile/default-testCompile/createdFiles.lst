@@ -1,0 +1,3 @@
+org/selenide/pages/Home.class
+org/selenide/pages/Employee.class
+org/selenide/tests/EmployeeTest.class

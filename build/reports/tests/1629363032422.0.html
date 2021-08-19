@@ -1,0 +1,92 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <script type="text/javascript" src="https://logifyjs.devexpress.com/logifyAlert.min.js"></script>
+    <script>
+        window.Site = parent.window.Site;
+        var currentDemo = Site.currentDemo;
+        var sources = Site.editor.getSources();
+        var version = Site.appVersion;
+        var approach = currentDemo.approach.toLowerCase();
+        var isModularApproach = ['angular', 'vue', 'react'].indexOf(approach) !== -1;
+
+        var html = Site.demoTemplateHelper.prepareMarkupForRun(currentDemo, Site.simulator);
+        document.write(Site.demoTemplateHelper.getHead(html));
+       
+        if (location.hash.indexOf("loggingEnabled") >= 0) {
+            document.write(unescape('%3Cscript src="../Scripts/errorLogging.js"%3E%3C/script%3E'));
+        }
+
+        document.write(unescape('%3Clink rel="stylesheet" type="text/css" href="demo-template.css?version=' + version + '" /%3E'));
+    </script>
+    <title>DevExtreme Demo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.5/css/dx.common.css">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.1.5/css/dx.light.css">
+
+    <script src="https://unpkg.com/core-js@2.4.1/client/shim.min.js"></script>
+    <script src="https://unpkg.com/zone.js@0.10.3/dist/zone.js"></script>
+    <script src="https://unpkg.com/reflect-metadata@0.1.3/Reflect.js"></script>
+    <script src="https://unpkg.com/systemjs@0.21.3/dist/system.js"></script>
+
+    
+
+    <script src="https://unpkg.com/typescript@3.4.5/lib/typescript.js"></script>
+    <script src="https://unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="../Scripts/errorLogging.js"></script><link rel="stylesheet" type="text/css" href="demo-template.css?version=21.1.5">
+</head>
+<body class="dx-viewport dx-device-desktop dx-device-generic Web dx-theme-generic dx-theme-generic-typography dx-color-scheme-light" style="max-width: 1235px;">
+    <script>
+        if (sources["styles.css"]) {
+            document.write("<style>" + sources["styles.css"].replace(/images\//g, "../JSDemos/images/") + "</style>");
+        }
+
+        if (sources['config.js']) {
+            eval(Site.demoTemplateHelper.prepareConfig(sources['config.js']));
+        }
+
+        document.write(Site.demoTemplateHelper.getBody(html));
+
+        if(isModularApproach) {
+            document.write(unescape('%3Cscript src="systemjs.config.' + approach + '.js?version=' + version + '"%3E%3C/script%3E'));
+        }
+
+        document.write(unescape('%3Cscript src="demo-template.js?version=' + version + '"%3E%3C/script%3E'));
+
+    </script>
+    <div class="demo-container">
+        <demo-app>Loading...</demo-app>
+    <iframe id="resize-listener" style="position: absolute; z-index: -1; top: 0px; height: 100%; width: 100%; border: 0px;"></iframe></div>
+<script src="systemjs.config.angular.js?version=21.1.5"></script><script src="demo-template.js?version=21.1.5"></script>
+
+</body></html>
